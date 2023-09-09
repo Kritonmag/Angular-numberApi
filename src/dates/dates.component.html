@@ -1,0 +1,18 @@
+<div class="dates">
+  <h2 class="dates-title">RANDOM DATES</h2>
+  <ul class="dates-list">
+    <li class="dates-item" *ngFor="let date of randomDates" (click)="clickDate(date)">
+      {{ date | date:'MMM dd' }}
+    </li>
+  </ul>
+  <div class="dates-input">
+    <p>my date</p>
+    <div class="area-input">
+      <input type="date" [(ngModel)]="inputDate">
+      <button (click)="onGetButtonClick()">get</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="factToShow !== ''">
+  <app-popup-modul [fact]="factToShow" (closePopup)="closePopup()"></app-popup-modul>
+</div>

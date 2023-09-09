@@ -1,0 +1,52 @@
+.dates {
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 25px;
+
+  .dates-title {
+    margin: 0;
+    text-align: center;
+  }
+
+  .dates-list {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .dates-item {
+    width: 100%;
+    border-radius: 15px;
+    padding: 30px 30px;
+    background-color: antiquewhite;
+    border: 1px solid black;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .dates-input {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    p {
+      font-size: 14px;
+    }
+
+    .area-input {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      input {
+        width: 120px;
+      }
+
+      button {}
+    }
+  }
+}

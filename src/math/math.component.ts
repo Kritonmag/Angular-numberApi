@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { NumberApiService } from '../service/number-api.service';
-import { PopupService } from '../service/popup.service';
+import { MathApiService } from 'src/service/math-api.service';
 
 @Component({
-  selector: 'app-numbers',
-  templateUrl: './numbers.component.html',
-  styleUrls: ['./numbers.component.scss']
+  selector: 'app-math',
+  templateUrl: './math.component.html',
+  styleUrls: ['./math.component.scss']
 })
-export class NumbersComponent implements OnInit {
+
+export class MathComponent implements OnInit {
   randomNumbers: number[] = [];
   factToShow: string = '';
   inputNumber: number | null = null;
 
   constructor(
-    private numberApiService: NumberApiService,
+    private mathApiService: MathApiService,
   ) { }
 
   closePopup() {
@@ -22,7 +22,7 @@ export class NumbersComponent implements OnInit {
 
   onGetButtonClick() {
     if (this.inputNumber !== null) {
-      this.clickNumber(this.inputNumber);
+      this.clickMath(this.inputNumber);
     }
   }
 
@@ -34,8 +34,8 @@ export class NumbersComponent implements OnInit {
     console.log(this.randomNumbers)
   }
 
-  clickNumber(number: number) {
-    this.numberApiService.getNumberFact(number).subscribe({
+  clickMath(number: number) {
+    this.mathApiService.getMathFact(number).subscribe({
       next: (fact: string) => {
         console.log(`Вы нажали на число: ${number}`);
         console.log(`Факт: ${fact}`);

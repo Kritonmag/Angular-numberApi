@@ -1,0 +1,18 @@
+<div class="math">
+  <h2 class="math-title">MATH</h2>
+  <ul class="math-list">
+    <li class="math-item" *ngFor="let number of randomNumbers" (click)="clickMath(number)">
+      {{ number }}
+    </li>
+  </ul>
+  <div class="math-input">
+    <p>my number</p>
+    <div class="area-input">
+      <input type="number" [(ngModel)]="inputNumber">
+      <button (click)="onGetButtonClick()">get</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="factToShow !== ''">
+  <app-popup-modul [fact]="factToShow" (closePopup)="closePopup()"></app-popup-modul>
+</div>
