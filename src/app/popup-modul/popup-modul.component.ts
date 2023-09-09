@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -8,6 +8,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class PopupModulComponent {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { fact: string }) { }
+  @Input() fact!: string
+  @Output() closePopup: EventEmitter<void> = new EventEmitter<void>();
+
+  close() {
+    this.closePopup.emit();
+  }
 
 }

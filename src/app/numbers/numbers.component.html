@@ -5,4 +5,14 @@
       {{ number }}
     </li>
   </ul>
+  <div class="numbers-input">
+    <p>my number</p>
+    <div class="area-input">
+      <input type="number">
+      <button>get</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="factToShow !== ''">
+  <app-popup-modul [fact]="factToShow" (closePopup)="closePopup()"></app-popup-modul>
 </div>

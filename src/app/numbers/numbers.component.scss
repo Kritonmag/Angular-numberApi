@@ -25,4 +25,28 @@
     cursor: pointer;
     text-align: center;
   }
+
+  .numbers-input {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    p {
+      font-size: 14px;
+    }
+
+    .area-input {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      input {
+        width: 120px;
+      }
+
+      button {}
+    }
+  }
 }

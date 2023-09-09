@@ -9,11 +9,15 @@ import { PopupService } from '../service/popup.service';
 })
 export class NumbersComponent implements OnInit {
   randomNumbers: number[] = [];
+  factToShow: string = '';
 
   constructor(
     private numberApiService: NumberApiService,
-    private popupService: PopupService
   ) { }
+
+  closePopup() {
+    this.factToShow = '';
+  }
 
   ngOnInit(): void {
     for (let i = 0; i < 8; i++) {
@@ -28,7 +32,7 @@ export class NumbersComponent implements OnInit {
       next: (fact: string) => {
         console.log(`Вы нажали на число: ${number}`);
         console.log(`Факт: ${fact}`);
-        this.popupService.openPopupWithData(fact)
+        this.factToShow = fact
       },
       error: (error) => {
         console.error('Произошла ошибка:', error);
