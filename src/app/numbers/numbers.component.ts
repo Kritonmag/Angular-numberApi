@@ -10,6 +10,7 @@ import { PopupService } from '../service/popup.service';
 export class NumbersComponent implements OnInit {
   randomNumbers: number[] = [];
   factToShow: string = '';
+  inputNumber: number | null = null;
 
   constructor(
     private numberApiService: NumberApiService,
@@ -19,9 +20,15 @@ export class NumbersComponent implements OnInit {
     this.factToShow = '';
   }
 
+  onGetButtonClick() {
+    if (this.inputNumber !== null) {
+      this.clickNumber(this.inputNumber);
+    }
+  }
+
   ngOnInit(): void {
     for (let i = 0; i < 8; i++) {
-      const randomNumber = Math.floor(Math.random() * 50) + 1;
+      const randomNumber = Math.floor(Math.random() * 120) + 1;
       this.randomNumbers.push(randomNumber)
     }
     console.log(this.randomNumbers)

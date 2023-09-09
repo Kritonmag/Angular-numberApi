@@ -8,8 +8,8 @@
   <div class="numbers-input">
     <p>my number</p>
     <div class="area-input">
-      <input type="number">
-      <button>get</button>
+      <input type="number" [(ngModel)]="inputNumber">
+      <button (click)="onGetButtonClick()">get</button>
     </div>
   </div>
 </div>
