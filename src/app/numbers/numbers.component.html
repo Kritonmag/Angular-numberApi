@@ -1,0 +1,8 @@
+<div class="numbers">
+  <h2 class="numbers-title">NUMBERS</h2>
+  <ul class="numbers-list">
+    <li class="numbers-item" *ngFor="let number of randomNumbers" (click)="clickNumber(number)">
+      {{ number }}
+    </li>
+  </ul>
+</div>
